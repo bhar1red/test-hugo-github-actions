@@ -41,6 +41,14 @@ jobs:
         hugo new posts/my-first-post.md
         hugo -D
 
+    - name: add ssh 
+      run: |
+        mkdir ssh 
+        echo ${{ secrets.SSH_PRIVATE_KEY }} > ssh/id_rsa
+        echo id_rsa 
+        eval "$(ssh-agent -s)"
+        ssh-add ~/ssh/id_rsa 
+
     # Runs a set of commands using the runners shell
     - name: Deploy public folder
       run: |
