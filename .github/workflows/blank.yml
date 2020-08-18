@@ -45,7 +45,9 @@ jobs:
     - name: Deploy public folder
       run: |
         ls -l
-        cd ..
+        cd quickstart
+        ls -l
+        cd public 
         ls -l 
         
         
