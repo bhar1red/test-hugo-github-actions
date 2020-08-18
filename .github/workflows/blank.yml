@@ -47,6 +47,8 @@ jobs:
         cd quickstart
         cd public 
         git init 
+        git config user.email "bhar1red@gmail.com"
+        git config user.name "Bargav Kondapu"
         git add . 
         git commit -m "Site deploy" 
         git remote add origin git@github.com:bhar1red/dummy-repo.git
