@@ -30,3 +30,20 @@ jobs:
     - name: Display hugo version
       run: |
         hugo version
+    
+    - name: Create hugo site 
+      run : |
+        hugo new site quickstart
+        cd quickstart    
+        git init 
+        git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+        echo 'theme = "ananke"' >> config.toml
+        hugo new posts/my-first-post.md
+        hugo -D
+     - name: Deploy public folder
+       run: | 
+         cd public    
+         ls -l 
+        
+      
+    
