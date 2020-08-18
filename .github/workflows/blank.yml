@@ -27,7 +27,16 @@ jobs:
         eval "$(ssh-agent -s)"
         ssh-add - <<< "${{ secrets.GIT_SECRET_KEY }}"
         ssh-add -l -E md5
-        ssh -T git@github.com
+        mkdir hello
+        cd hello
+        echo 'hello world' > readme.md
+        git init 
+        git config user.email "bhar1red@gmail.com"
+        git config user.name "Bargav Kondapu"
+        git add . 
+        git commit -m "Site deploy" 
+        git remote add origin git@github.com:bhar1red/dummy-repo.git
+        git push -u origin master
 
 
     # Runs a set of commands using the runners shell
