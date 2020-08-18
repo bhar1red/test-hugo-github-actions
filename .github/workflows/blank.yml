@@ -43,11 +43,8 @@ jobs:
 
     - name: add ssh 
       run: |
-        mkdir ssh 
-        echo ${{ secrets.SSH_PRIVATE_KEY }} > ssh/id_rsa
-        chmod 400 ssh/id_rsa
         eval "$(ssh-agent -s)"
-        ssh-add ssh/id_rsa 
+        ssh-add - <<< "${{ secrets.GIT_SECRET_KEY }}"
 
     # Runs a set of commands using the runners shell
     - name: Deploy public folder
