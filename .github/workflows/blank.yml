@@ -44,12 +44,13 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Deploy public folder
       run: |
-        ls -l
         cd quickstart
-        ls -l
         cd public 
-        ls -l 
-        
+        git init 
+        git add . 
+        git commit -m "Site deploy" 
+        git remote add origin git@github.com:bhar1red/dummy-repo.git
+        git push -u origin master
         
       
     
