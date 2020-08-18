@@ -24,7 +24,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Install Hugo 
-      run: sudo apt-get install hugo
+      run: brew install hugo
 
     # Runs a set of commands using the runners shell
     - name: Display hugo version
