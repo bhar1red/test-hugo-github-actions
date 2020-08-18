@@ -34,6 +34,8 @@ jobs:
         mkdir hello
         cd hello
         echo 'hello world' > readme.md
+        ssh-add -l -E md5
+        ssh -T git@github.com
         git init 
         git config user.email "bhar1red@gmail.com"
         git config user.name "Bargav Kondapu"
